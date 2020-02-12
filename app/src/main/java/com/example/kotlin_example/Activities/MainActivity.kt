@@ -1,5 +1,6 @@
 package com.example.kotlin_example.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -30,18 +31,13 @@ class MainActivity : AppCompatActivity() {
                 )
             )
 
-
-
             logInButton.setOnClickListener {
-
-               // Toast.makeText(this,listOfUsers.toString(),Toast.LENGTH_LONG).show()
                 loginPresenter.validate(userNameText.text.toString(),passwrodText.text.toString())
-
             }
 
                 createAccountButton.setOnClickListener{
-                    //val intent = new Intent()
-                    //startActivity(intent)
+                    val intent = Intent(this,SendEmailActivity::class.java)
+                    startActivity(intent)
                 }
 
 

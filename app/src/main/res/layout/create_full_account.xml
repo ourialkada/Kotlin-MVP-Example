@@ -3,41 +3,233 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/patientVerificationHeader"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#017cc2"
+            android:gravity="center"
+            android:text="Create Account"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/visibilityGoneUserExists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_below="@id/layout1"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#ef4d61"
+            android:gravity="center"
+            android:text="A user with this email already exists."
+            android:textColor="#fff" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/visibilityGoneCheckInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout1"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#ef4d61"
+            android:gravity="center"
+            android:text="Please check your info and try again."
+            android:textColor="#fff" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp" />
+
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--First Name-->
+            <EditText
+                android:id="@+id/etFirstNameSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="First Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:singleLine="true">
+                <requestFocus/>
+            </EditText>
+
+            <!--Last Name-->
+            <EditText
+                android:id="@+id/etLastNameSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:singleLine="true"/>
+
+
+
+
+            <!--Address 1-->
+            <EditText
+                android:id="@+id/etAddressSignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Address 1"
+
+                android:inputType="text"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:singleLine="true"/>
+
+            <!--Address 2-->
+            <EditText
+                android:id="@+id/etAddressSignUpp2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Address 2"
+
+                android:inputType="text"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:singleLine="true"/>
+
+            <EditText
+                android:id="@+id/etCountrySignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Country"
+
+                android:inputType="text"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+
+            <!--City-->
+            <EditText
+                android:id="@+id/etCitySignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="City"
+                android:singleLine="true"
+
+                android:inputType="text"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+
+            <!--State-->
+            <EditText
+                android:id="@+id/etStateSignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+
+                android:hint="State"
+                android:inputType="text"
+                android:textColor="#666666"
+                android:onClick="searchCitiesList"
+                android:textSize="15sp"
+                />
+            <!--Zip Code-->
+            <EditText
+                android:id="@+id/etZipCodeSignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Zip Code"
+
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:maxLength="5"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:singleLine="true"/>
+
+            <!--Phone No-->
+            <EditText
+                android:id="@+id/etPhoneNoSignUpp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Phone Number"
+
+                android:inputType="number"
+                android:digits="0123456789"
+                android:textColor="#666666"
+                android:textSize="15sp"
+                android:maxLength="10"
+                android:singleLine="true"/>
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/buttonFull"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="#017cc2"
+                android:gravity="center"
+                android:onClick="nextClick"
 
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Create Account"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:singleLine="true"/>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>
