@@ -1,4 +1,4 @@
-package com.example.kotlin_example
+package com.example.kotlin_example.Model
 
 import android.text.Editable
 
