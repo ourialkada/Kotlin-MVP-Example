@@ -1,7 +1,8 @@
-package com.example.kotlin_example
+package com.example.kotlin_example.Presenters
 
 import android.content.Context
 import android.widget.Toast
+import com.example.kotlin_example.Views.LoginView
 
 class LoginPresenter(context: Context) : LoginView
 {

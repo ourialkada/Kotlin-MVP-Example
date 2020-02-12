@@ -1,11 +1,12 @@
-package com.example.kotlin_example
+package com.example.kotlin_example.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import com.example.kotlin_example.Model.User
+import com.example.kotlin_example.Presenters.LoginPresenter
+import com.example.kotlin_example.R
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,12 @@ class MainActivity : AppCompatActivity() {
             val userNameText = findViewById<EditText>(R.id.userName)
             val passwrodText = findViewById<EditText>(R.id.password)
             var listOfUsers = ArrayList<User>()
-            listOfUsers.add(User(userNameText.text,passwrodText.text))
+            listOfUsers.add(
+                User(
+                    userNameText.text,
+                    passwrodText.text
+                )
+            )
 
 
 
